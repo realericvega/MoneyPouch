@@ -14,6 +14,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.text.DecimalFormat;
@@ -76,6 +77,9 @@ public class UseListener implements Listener {
                 }
 
                 usePouch(player, p);
+
+                // Gives a player the Speed Potion Effect when opening their pouch via right click
+                player.addPotionEffect(PotionEffectType.SPEED.createEffect(100, 1));
             }
         }
     }
